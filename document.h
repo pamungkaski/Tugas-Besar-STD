@@ -3,13 +3,19 @@
 //
 #include <iostream>
 #include <string>
+#include "tags.h"
+using namespace std;
 #ifndef TUGASBESARSTD_DOCUMENT_H
 #define TUGASBESARSTD_DOCUMENT_H
 typedef string infotype;
-typedef struct DocList *docAddres;
+typedef struct docElm *docAddress;
 
-struct{
+struct docElm{
     infotype info;
 
+};
+struct docList{
+    docAddress first;
+    docAddress last;
 };
 #endif //TUGASBESARSTD_DOCUMENT_H
