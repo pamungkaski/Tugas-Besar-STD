@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/TugasBesarSTD.dir/main.cpp.o"
+  "CMakeFiles/TugasBesarSTD.dir/document.cpp.o"
+  "CMakeFiles/TugasBesarSTD.dir/tags.cpp.o"
   "TugasBesarSTD.pdb"
   "TugasBesarSTD"
 )

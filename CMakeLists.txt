@@ -3,5 +3,5 @@ project(TugasBesarSTD)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp)
+set(SOURCE_FILES main.cpp document.h document.cpp tags.cpp tags.h)
 add_executable(TugasBesarSTD ${SOURCE_FILES})

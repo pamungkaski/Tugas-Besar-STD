@@ -82,7 +82,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/iampamungkas/CLionProjects/LabSTD/TugasBesarSTD/document.cpp">
+			<Option target="TugasBesarSTD"/>
+		</Unit>
+		<Unit filename="/Users/iampamungkas/CLionProjects/LabSTD/TugasBesarSTD/document.h">
+			<Option target="TugasBesarSTD"/>
+		</Unit>
 		<Unit filename="/Users/iampamungkas/CLionProjects/LabSTD/TugasBesarSTD/main.cpp">
+			<Option target="TugasBesarSTD"/>
+		</Unit>
+		<Unit filename="/Users/iampamungkas/CLionProjects/LabSTD/TugasBesarSTD/tags.cpp">
+			<Option target="TugasBesarSTD"/>
+		</Unit>
+		<Unit filename="/Users/iampamungkas/CLionProjects/LabSTD/TugasBesarSTD/tags.h">
 			<Option target="TugasBesarSTD"/>
 		</Unit>
 		<Unit filename="/Users/iampamungkas/CLionProjects/LabSTD/TugasBesarSTD/CMakeLists.txt">

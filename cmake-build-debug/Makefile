@@ -123,6 +123,33 @@ TugasBesarSTD/fast:
 	$(MAKE) -f CMakeFiles/TugasBesarSTD.dir/build.make CMakeFiles/TugasBesarSTD.dir/build
 .PHONY : TugasBesarSTD/fast
 
+document.o: document.cpp.o
+
+.PHONY : document.o
+
+# target to build an object file
+document.cpp.o:
+	$(MAKE) -f CMakeFiles/TugasBesarSTD.dir/build.make CMakeFiles/TugasBesarSTD.dir/document.cpp.o
+.PHONY : document.cpp.o
+
+document.i: document.cpp.i
+
+.PHONY : document.i
+
+# target to preprocess a source file
+document.cpp.i:
+	$(MAKE) -f CMakeFiles/TugasBesarSTD.dir/build.make CMakeFiles/TugasBesarSTD.dir/document.cpp.i
+.PHONY : document.cpp.i
+
+document.s: document.cpp.s
+
+.PHONY : document.s
+
+# target to generate assembly for a file
+document.cpp.s:
+	$(MAKE) -f CMakeFiles/TugasBesarSTD.dir/build.make CMakeFiles/TugasBesarSTD.dir/document.cpp.s
+.PHONY : document.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -150,6 +177,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/TugasBesarSTD.dir/build.make CMakeFiles/TugasBesarSTD.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+tags.o: tags.cpp.o
+
+.PHONY : tags.o
+
+# target to build an object file
+tags.cpp.o:
+	$(MAKE) -f CMakeFiles/TugasBesarSTD.dir/build.make CMakeFiles/TugasBesarSTD.dir/tags.cpp.o
+.PHONY : tags.cpp.o
+
+tags.i: tags.cpp.i
+
+.PHONY : tags.i
+
+# target to preprocess a source file
+tags.cpp.i:
+	$(MAKE) -f CMakeFiles/TugasBesarSTD.dir/build.make CMakeFiles/TugasBesarSTD.dir/tags.cpp.i
+.PHONY : tags.cpp.i
+
+tags.s: tags.cpp.s
+
+.PHONY : tags.s
+
+# target to generate assembly for a file
+tags.cpp.s:
+	$(MAKE) -f CMakeFiles/TugasBesarSTD.dir/build.make CMakeFiles/TugasBesarSTD.dir/tags.cpp.s
+.PHONY : tags.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -159,9 +213,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... TugasBesarSTD"
+	@echo "... document.o"
+	@echo "... document.i"
+	@echo "... document.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... tags.o"
+	@echo "... tags.i"
+	@echo "... tags.s"
 .PHONY : help
 
 

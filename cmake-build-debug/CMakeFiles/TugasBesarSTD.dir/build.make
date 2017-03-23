@@ -81,17 +81,69 @@ CMakeFiles/TugasBesarSTD.dir/main.cpp.o.provides: CMakeFiles/TugasBesarSTD.dir/m
 CMakeFiles/TugasBesarSTD.dir/main.cpp.o.provides.build: CMakeFiles/TugasBesarSTD.dir/main.cpp.o
 
 
+CMakeFiles/TugasBesarSTD.dir/document.cpp.o: CMakeFiles/TugasBesarSTD.dir/flags.make
+CMakeFiles/TugasBesarSTD.dir/document.cpp.o: ../document.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/iampamungkas/CLionProjects/LabSTD/TugasBesarSTD/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TugasBesarSTD.dir/document.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TugasBesarSTD.dir/document.cpp.o -c /Users/iampamungkas/CLionProjects/LabSTD/TugasBesarSTD/document.cpp
+
+CMakeFiles/TugasBesarSTD.dir/document.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TugasBesarSTD.dir/document.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/iampamungkas/CLionProjects/LabSTD/TugasBesarSTD/document.cpp > CMakeFiles/TugasBesarSTD.dir/document.cpp.i
+
+CMakeFiles/TugasBesarSTD.dir/document.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TugasBesarSTD.dir/document.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/iampamungkas/CLionProjects/LabSTD/TugasBesarSTD/document.cpp -o CMakeFiles/TugasBesarSTD.dir/document.cpp.s
+
+CMakeFiles/TugasBesarSTD.dir/document.cpp.o.requires:
+
+.PHONY : CMakeFiles/TugasBesarSTD.dir/document.cpp.o.requires
+
+CMakeFiles/TugasBesarSTD.dir/document.cpp.o.provides: CMakeFiles/TugasBesarSTD.dir/document.cpp.o.requires
+	$(MAKE) -f CMakeFiles/TugasBesarSTD.dir/build.make CMakeFiles/TugasBesarSTD.dir/document.cpp.o.provides.build
+.PHONY : CMakeFiles/TugasBesarSTD.dir/document.cpp.o.provides
+
+CMakeFiles/TugasBesarSTD.dir/document.cpp.o.provides.build: CMakeFiles/TugasBesarSTD.dir/document.cpp.o
+
+
+CMakeFiles/TugasBesarSTD.dir/tags.cpp.o: CMakeFiles/TugasBesarSTD.dir/flags.make
+CMakeFiles/TugasBesarSTD.dir/tags.cpp.o: ../tags.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/iampamungkas/CLionProjects/LabSTD/TugasBesarSTD/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TugasBesarSTD.dir/tags.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TugasBesarSTD.dir/tags.cpp.o -c /Users/iampamungkas/CLionProjects/LabSTD/TugasBesarSTD/tags.cpp
+
+CMakeFiles/TugasBesarSTD.dir/tags.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TugasBesarSTD.dir/tags.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/iampamungkas/CLionProjects/LabSTD/TugasBesarSTD/tags.cpp > CMakeFiles/TugasBesarSTD.dir/tags.cpp.i
+
+CMakeFiles/TugasBesarSTD.dir/tags.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TugasBesarSTD.dir/tags.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/iampamungkas/CLionProjects/LabSTD/TugasBesarSTD/tags.cpp -o CMakeFiles/TugasBesarSTD.dir/tags.cpp.s
+
+CMakeFiles/TugasBesarSTD.dir/tags.cpp.o.requires:
+
+.PHONY : CMakeFiles/TugasBesarSTD.dir/tags.cpp.o.requires
+
+CMakeFiles/TugasBesarSTD.dir/tags.cpp.o.provides: CMakeFiles/TugasBesarSTD.dir/tags.cpp.o.requires
+	$(MAKE) -f CMakeFiles/TugasBesarSTD.dir/build.make CMakeFiles/TugasBesarSTD.dir/tags.cpp.o.provides.build
+.PHONY : CMakeFiles/TugasBesarSTD.dir/tags.cpp.o.provides
+
+CMakeFiles/TugasBesarSTD.dir/tags.cpp.o.provides.build: CMakeFiles/TugasBesarSTD.dir/tags.cpp.o
+
+
 # Object files for target TugasBesarSTD
 TugasBesarSTD_OBJECTS = \
-"CMakeFiles/TugasBesarSTD.dir/main.cpp.o"
+"CMakeFiles/TugasBesarSTD.dir/main.cpp.o" \
+"CMakeFiles/TugasBesarSTD.dir/document.cpp.o" \
+"CMakeFiles/TugasBesarSTD.dir/tags.cpp.o"
 
 # External object files for target TugasBesarSTD
 TugasBesarSTD_EXTERNAL_OBJECTS =
 
 TugasBesarSTD: CMakeFiles/TugasBesarSTD.dir/main.cpp.o
+TugasBesarSTD: CMakeFiles/TugasBesarSTD.dir/document.cpp.o
+TugasBesarSTD: CMakeFiles/TugasBesarSTD.dir/tags.cpp.o
 TugasBesarSTD: CMakeFiles/TugasBesarSTD.dir/build.make
 TugasBesarSTD: CMakeFiles/TugasBesarSTD.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/iampamungkas/CLionProjects/LabSTD/TugasBesarSTD/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable TugasBesarSTD"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/iampamungkas/CLionProjects/LabSTD/TugasBesarSTD/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable TugasBesarSTD"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TugasBesarSTD.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -100,6 +152,8 @@ CMakeFiles/TugasBesarSTD.dir/build: TugasBesarSTD
 .PHONY : CMakeFiles/TugasBesarSTD.dir/build
 
 CMakeFiles/TugasBesarSTD.dir/requires: CMakeFiles/TugasBesarSTD.dir/main.cpp.o.requires
+CMakeFiles/TugasBesarSTD.dir/requires: CMakeFiles/TugasBesarSTD.dir/document.cpp.o.requires
+CMakeFiles/TugasBesarSTD.dir/requires: CMakeFiles/TugasBesarSTD.dir/tags.cpp.o.requires
 
 .PHONY : CMakeFiles/TugasBesarSTD.dir/requires
 
