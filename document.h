@@ -25,7 +25,9 @@ struct docList{
 };
 struct docElm{
     infotype info;
+    int tagsCount;//The number of tags in the document
     childList child;
     docAddress next;
 };
+
 #endif //TUGASBESARSTD_DOCUMENT_H
