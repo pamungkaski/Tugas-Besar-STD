@@ -1,7 +1,8 @@
 #include <iostream>
-using namespace std;
+#include "document.h"
+#include "tags.h"
 
-int main() {
-    cout << "Hello, World!" << endl;
+using namespace std;
+int main(){
     return 0;
 }
