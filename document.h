@@ -31,6 +31,7 @@ struct docElm{
 };
 void createlist (docList &L);
 void addDoc (docList &L, infotype x);
+docAddress findElm (docList &L, infotype x);
 
 
 
