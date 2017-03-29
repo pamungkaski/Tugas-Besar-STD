@@ -7,6 +7,21 @@ void createlist (docList &L){
 	L.last = NULL;
 };
 
-void addDoc (docList &L, address P){
-	
-}
+void addDoc (docList &L, infotype x){
+	docAddress P = new docElm;
+	P->tagCount = 0;
+	P->info = x;
+	P->next = NULL;
+	P->child.first = NULL;
+	P->child.last = NULL;
+	if (L.first = NULL){
+		L.first = P;
+		L.last = P;
+	}else {
+		L.last->next = P;
+		L.last = P;
+	};
+};
+
+
+

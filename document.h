@@ -30,8 +30,8 @@ struct docElm{
     docAddress next;
 };
 void createlist (docList &L);
-void addDoc (doclist &L, address P);
-void allocate (docList &L, infotype x);
+void addDoc (docList &L, infotype x);
+
 
 
 #endif //TUGASBESARSTD_DOCUMENT_H
