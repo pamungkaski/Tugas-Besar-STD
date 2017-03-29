@@ -9,7 +9,7 @@ using namespace std;
 #define TUGASBESARSTD_DOCUMENT_H
 typedef string infotype;
 typedef struct docElm *docAddress;
-typedef tagsAddress *childAddress;
+typedef childElm *childAddress;
 typedef tagsElm *childInfo;
 struct childElm{
     childInfo info;
@@ -31,8 +31,7 @@ struct docElm{
 };
 void createlist (docList &L);
 void addDoc (docList &L, infotype x);
-docAddress findElm (docList &L, infotype x);
-
-
-
+docAddress findElm(docList &L, infotype x);
+void createRelation(infotype x, infotype y);
+void showdoc (docList &L);
 #endif //TUGASBESARSTD_DOCUMENT_H

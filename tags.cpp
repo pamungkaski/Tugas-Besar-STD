@@ -23,7 +23,7 @@ void newTags(tagsList &L, infotype x){
     tagsAddress P = new tagsElm;
     P->tagsUsed =0;
     P->info = x;
-    P->next=NULL;
+    P->next = NULL;
     if (L.first==NULL){
         L.first=P;
         L.last =P;
