@@ -32,6 +32,4 @@ struct docElm{
 void createlist (docList &L);
 void addDoc (docList &L, infotype x);
 
-
-
 #endif //TUGASBESARSTD_DOCUMENT_H
