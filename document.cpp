@@ -24,7 +24,7 @@ void addDoc (docList &L, infotype x){
 };
 
 tagAddress findElm (docList &L, infotype x){
-	tagAddress P=L.first;
+	docAddress P=L.first;
 	while (P->info != x) and (P->next != NULL){
 		P = P->next;
 	}if (P->info = x){
