@@ -36,6 +36,8 @@ docAddress findElm(docList &L, infotype x){
 void createRelation(docList &Ld,tagsList &Lt, infotype x, infotype y){
     docAddress Pd = findElm(Ld,x);
     tagsAddress Pt = findTags(Lt,y);
+    Pd->tagsCount+=1;
+    Pt->tagsUse+=1;
     childAddress P = new childElm;
     P->info = Pt;
     if(Pd->child==NULL){
