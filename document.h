@@ -34,4 +34,5 @@ void addDoc (docList &L, infotype x);
 docAddress findElm(docList &L, infotype x);
 void createRelation(infotype x, infotype y);
 void showdoc (docList &L);
+void popTag (tagsList &L);
 #endif //TUGASBESARSTD_DOCUMENT_H

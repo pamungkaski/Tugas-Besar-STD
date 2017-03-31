@@ -56,7 +56,18 @@ void showdoc(docList &L){
 		while (Pt != NULL){
 			cout<<"Tags="<<Pt->info->info<<
 			Pt = Pt->next;
-		}
+		};
 		P = P->next;
+	};
+};
+void popTag(tagsList &L, infotype x){
+	int popular=0;
+	while((P->info!=x)and(P->next!=NULL)){
+        P=P->next;
+    	if(P->info==x){
+    		popular=popular+1;
+    	}else 
+    		popular=0;
 	}
+
 }

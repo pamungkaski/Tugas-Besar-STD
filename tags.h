@@ -8,14 +8,18 @@ using namespace std;
 #define TUGASBESARSTD_TAGS_H
 #define
 typedef string infotype;
+
 typedef struct tagsElm *tagsAddress;
+
 struct tagsElm {
     int tagsUsed;// the number tags being used
     infotype info;
     tagsAddress next;
 };
+
 struct tagsList{
     tagsAddress first;
+    int popular;
     tagsAddress last;
 };
 void createList(tagsList &L);
