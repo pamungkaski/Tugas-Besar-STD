@@ -37,10 +37,10 @@ void createRelation(docList &Ld,tagsList &Lt, infotype x, infotype y){
     docAddress Pd = findElm(Ld,x);
     tagsAddress Pt = findTags(Lt,y);
     Pd->tagsCount+=1;
-    Pt->tagsUse+=1;
+    Pt->tagsUsed+=1;
     childAddress P = new childElm;
     P->info = Pt;
-    if(Pd->child==NULL){
+    if(Pd->child.first == NULL){
         Pd->child.first = P;
         Pd->child.last = P;
     }else{
@@ -51,23 +51,26 @@ void createRelation(docList &Ld,tagsList &Lt, infotype x, infotype y){
 void showdoc(docList &L){
 	docAddress P=L.first;
 	while (P!= NULL){
-		cout<<"Document="<<P->info<<endl
-		tagsAddres Pt = P->child.first;
-		while (Pt != NULL){
-			cout<<"Tags="<<Pt->info->info<<
+		cout<<"Document="<<P->info<<endl;
+		childAddress Pt = P->child.first;
+        cout<<"Tags:"<<endl;
+        while (Pt != NULL){
+			cout<<"#"<<Pt->info->info<<" ";
 			Pt = Pt->next;
 		};
 		P = P->next;
 	};
 };
-void popTag(tagsList &L, infotype x){
-	int popular=0;
-	while((P->info!=x)and(P->next!=NULL)){
-        P=P->next;
-    	if(P->info==x){
-    		popular=popular+1;
-    	}else 
-    		popular=0;
-	}
-
+void popTag(tagsList &L){
+    tagsAddress P = L.first;
+    tagsAddress max = P;
+    P = P->next;
+    while(P != NULL){
+        if(P->tagsUsed > max->tagsUsed){
+            max = P;
+        }
+        P = P->next;
+    }
+    cout << "Most popular tags = " << max <<endl;
+    cout << "Number of tags = " << max->tagsUsed <<endl;
 }

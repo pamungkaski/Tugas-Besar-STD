@@ -6,7 +6,6 @@
 using namespace std;
 #ifndef TUGASBESARSTD_TAGS_H
 #define TUGASBESARSTD_TAGS_H
-#define
 typedef string infotype;
 
 typedef struct tagsElm *tagsAddress;

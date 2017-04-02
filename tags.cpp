@@ -38,7 +38,7 @@ void deleteTags(tagsList &L, infotype x){
         if(P1->info==x){
             if(L.first==L.last){
                 L.first = NULL;
-                L.Last = NULL;
+                L.last = NULL;
                 delete(P1);
             }else{
                 L.first= P1->next;

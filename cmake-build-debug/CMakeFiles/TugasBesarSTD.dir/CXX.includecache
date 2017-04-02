@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/iampamungkas/CLionProjects/LabSTD/TugasBesarSTD/document.cpp
+document.h
+/Users/iampamungkas/CLionProjects/LabSTD/TugasBesarSTD/document.h
+
+/Users/iampamungkas/CLionProjects/LabSTD/TugasBesarSTD/document.h
+iostream
+-
+string
+-
+tags.h
+/Users/iampamungkas/CLionProjects/LabSTD/TugasBesarSTD/tags.h
+
+/Users/iampamungkas/CLionProjects/LabSTD/TugasBesarSTD/main.cpp
+iostream
+-
+document.h
+/Users/iampamungkas/CLionProjects/LabSTD/TugasBesarSTD/document.h
+tags.h
+/Users/iampamungkas/CLionProjects/LabSTD/TugasBesarSTD/tags.h
+
+/Users/iampamungkas/CLionProjects/LabSTD/TugasBesarSTD/tags.cpp
+tags.h
+/Users/iampamungkas/CLionProjects/LabSTD/TugasBesarSTD/tags.h
+
+/Users/iampamungkas/CLionProjects/LabSTD/TugasBesarSTD/tags.h
+iostream
+-
+string
+-
+
