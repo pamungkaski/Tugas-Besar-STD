@@ -61,7 +61,7 @@ void showdoc(docList &L){
 		P = P->next;
 	};
 };
-void popTag(tagsList &L){
+tagsAddress popTag(tagsList &L){
     tagsAddress P = L.first;
     tagsAddress max = P;
     P = P->next;
@@ -71,6 +71,5 @@ void popTag(tagsList &L){
         }
         P = P->next;
     }
-    cout << "Most popular tags = " << max <<endl;
-    cout << "Number of tags = " << max->tagsUsed <<endl;
+    return max;
 }
