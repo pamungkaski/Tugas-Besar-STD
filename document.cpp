@@ -73,3 +73,12 @@ tagsAddress popTag(tagsList &L){
     }
     return max;
 }
+void docPop(docList &L){
+	docAddress P=L.first;
+	while(P != NULL){
+		if(popTag(L)){
+			cout<<P->info<<endl;
+		}
+	}return P;
+
+}
