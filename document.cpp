@@ -92,3 +92,49 @@ void docPop(docList &dL, tagsList &tL){
         P = P->next;
 	}
 }
+void deleteDoc(docList &dL,tagsList &tL, infotype x){
+    docAddress Pd = findElm(dL,x);
+    childAddress dC = Pd->child.first;
+    while(dC != NULL){
+        dC->info->tagsUsed-=1;
+        dC= dC->next;
+    }
+    if(Pd == dL.first){
+        dL.first = Pd->next;
+    }else if(Pd == dL.last){
+        docAddress dP = dL.first;
+        while(dP->next != Pd){
+            dP = dP->next;
+        }
+        dL.last = dP;
+        dP->next = Pd->next;
+    }else{
+        docAddress dP = dL.first;
+        while(dP->next != Pd){
+            dP = dP->next;
+        }
+        dP->next = Pd->next;
+    }
+    delete(Pd);
+};
+void deleteCertTags(docList &dL,tagsList &tL, infotype x){
+    tagsAddress Pt = findTags(tL,x);
+    docAddress Pd = dL.first;
+    childAddress Pc1,Pc2;
+    while(Pd != NULL){
+        Pc1 = Pd->child.first;
+        if(Pc1->info->info == x){
+            Pd->child.first = Pc1->next;
+            delete(Pc1);
+        }else{
+            while(Pc1->next->info->info != x){
+                Pc1 = Pc1->next;
+            }
+            Pc2 = Pc1->next;
+            if(Pc2 == Pd->child.last){
+                Pd->child.last = Pc1;
+            }
+            Pc1->next = Pc2->next;
+        }
+    }
+};

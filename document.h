@@ -36,5 +36,7 @@ void createRelation(docList &Ld,tagsList &Lt, infotype x, infotype y);
 void showdoc (docList &L);
 tagsAddress popTag (tagsList &L);
 childAddress findTagsInDoc(docAddress doc, infotype x);
-void docPop(docList &L);
+void docPop(docList &dL, tagsList &tL);
+void deleteDoc(docList &dL,tagsList &tL, infotype x);
+void deleteCertTags(docList &dL,tagsList &tL, infotype x);
 #endif //TUGASBESARSTD_DOCUMENT_H
