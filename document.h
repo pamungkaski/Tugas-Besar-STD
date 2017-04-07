@@ -35,4 +35,6 @@ docAddress findElm(docList &L, infotype x);
 void createRelation(docList &Ld,tagsList &Lt, infotype x, infotype y);
 void showdoc (docList &L);
 tagsAddress popTag (tagsList &L);
+childAddress findTagsInDoc(docAddress doc, infotype x);
+void docPop(docList &L);
 #endif //TUGASBESARSTD_DOCUMENT_H

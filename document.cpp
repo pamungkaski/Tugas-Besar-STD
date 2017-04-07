@@ -73,12 +73,22 @@ tagsAddress popTag(tagsList &L){
     }
     return max;
 }
-void docPop(docList &L){
-	docAddress P=L.first;
+childAddress findTagsInDoc(docAddress doc, infotype x){
+    childAddress P = doc->child.first;
+    while ((P->info->info != x) and (P->next != NULL)){
+        P = P->next;
+    }if (P->info->info == x){
+        return P;
+    }else {
+        return NULL;
+    };
+}
+void docPop(docList &dL, tagsList &tL){
+	docAddress P = dL.first;
 	while(P != NULL){
-		if(popTag(L)){
+		if(findTagsInDoc(P,popTag(tL)->info) != NULL){
 			cout<<P->info<<endl;
 		}
-	}return P;
-
+        P = P->next;
+	}
 }
