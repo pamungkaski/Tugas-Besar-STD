@@ -40,14 +40,23 @@ void menu(bool &stats){
         case 3:
             break;
         case 4:
+        	deleteDoc(listD,listT,x);
+        	cout<<"Doucment Deleted";
             break;
         case 5:
+        	showdoc(listD);
             break;
         case 6:
+        	
             break;
         case 7:
             break;
         case 8:
+        	cout<<"DOcument with the Largest Tag:\n";
+        	docPop(listD,listT);
+        	cout<<endl;
+        	cout<<"Document with the Smallest Tag:";
+        	showSmallTag(listD,listL);
             break;
         case 9:
             break;

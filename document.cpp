@@ -138,3 +138,32 @@ void deleteCertTags(docList &dL,tagsList &tL, infotype x){
         }
     }
 };
+tagsAddress smallTag(tagsList &L){
+    tagsAddress P = L.first;
+    tagsAddress min = P;
+    P = P->next;
+    while(P != NULL){
+        if(P->tagsUsed < min->tagsUsed){
+            min = P;
+        }
+        P = P->next;
+    }
+    return max;
+};
+void showSmallTag(docList &dL,tagsList &tL){
+    docAddress P = dL.first;
+    while(P != NULL){
+        if(findTagsInDoc(P,smallTag(tL)->info) != NULL){
+            cout<<P->info<<endl;
+        }
+        P = P->next;
+    }
+}
+void notagDoc(docList &dL){
+    docAddress P = dL.first;
+    while(P != NULL){
+        if(tagsUsed == 0){
+            cout<<P.info<<endl;
+        }
+    }
+}
