@@ -19,10 +19,10 @@ void menu(bool &stats){
     cout << "5.  Show all documents and all of each tag"<<endl;//udah
     cout << "6.  Find the most popular tags"<<endl;//udah
     cout << "7.  List all documents tagged having the most popular tag"<<endl;//udah
-    cout << "8.  Find a document with the largest and smallest number of tags"<<endl;
+    cout << "8.  Find a document with the largest and smallest number of tags"<<endl;//udah
     cout << "9.  Given two tags, find documents having both tags or one of them"<<endl;
-    cout << "10. Lists all papers that do not have any tag"<<endl;
-    cout << "11. Given a paper, find the most similar paper"<<endl;
+    cout << "10. Lists all papers that do not have any tag"<<endl;//udah
+    cout << "11. Given a paper, find the most similar paper"<<endl;//udah
     cout << "12. Quit"<<endl;//udah
     cout << "Pilih menu : ";
     cin >> pil;
@@ -41,7 +41,7 @@ void menu(bool &stats){
             break;
         case 4:
         	deleteDoc(listD,listT,x);
-        	cout<<"Doucment Deleted";
+        	cout<<"Document Deleted";
             break;
         case 5:
         	showdoc(listD);
@@ -52,7 +52,7 @@ void menu(bool &stats){
         case 7:
             break;
         case 8:
-        	cout<<"DOcument with the Largest Tag:\n";
+        	cout<<"Document with the Largest Tag:\n";
         	docPop(listD,listT);
         	cout<<endl;
         	cout<<"Document with the Smallest Tag:";

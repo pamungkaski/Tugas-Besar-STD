@@ -72,7 +72,7 @@ tagsAddress popTag(tagsList &L){
         P = P->next;
     }
     return max;
-}
+};
 childAddress findTagsInDoc(docAddress doc, infotype x){
     childAddress P = doc->child.first;
     while ((P->info->info != x) and (P->next != NULL)){
@@ -82,7 +82,7 @@ childAddress findTagsInDoc(docAddress doc, infotype x){
     }else {
         return NULL;
     };
-}
+};
 void docPop(docList &dL, tagsList &tL){
 	docAddress P = dL.first;
 	while(P != NULL){
@@ -138,32 +138,63 @@ void deleteCertTags(docList &dL,tagsList &tL, infotype x){
         }
     }
 };
-tagsAddress smallTag(tagsList &L){
-    tagsAddress P = L.first;
-    tagsAddress min = P;
-    P = P->next;
+void showDocWithSmallnLargeTag(docList &dL){
+    docAddress min = dL.first;
+    docAddress max = dL.first;
+    docAddress P = dL.first->next;
     while(P != NULL){
-        if(P->tagsUsed < min->tagsUsed){
+        if(min->tagsCount > P->tagsCount){
             min = P;
+        }else if(max->tagsCount < P->tagsCount){
+            max = P;
         }
         P = P->next;
     }
-    return max;
+    cout << "Document with smallest number of tags: " << min->info <<"(Tags: "<<min->tagsCount<<")"<< endl;
+    cout << "Document with biggest number of tags: " << max->info <<"(Tags: "<<max->tagsCount<<")"<< endl;
 };
-void showSmallTag(docList &dL,tagsList &tL){
+void noTagDoc(docList &dL){
     docAddress P = dL.first;
     while(P != NULL){
-        if(findTagsInDoc(P,smallTag(tL)->info) != NULL){
-            cout<<P->info<<endl;
+        if(P->tagsCount == 0){
+            cout<< P->info<<endl;
         }
         P = P->next;
     }
-}
-void notagDoc(docList &dL){
+};
+void findMostSimillarPaper(docList &dL, infotype x){
+    docAddress Pd = findElm(dL,x);
     docAddress P = dL.first;
+    struct simillarity{
+        infotype name;
+        int count;
+    };
+    simillarity simList[100];
+    int i = 0;
     while(P != NULL){
-        if(tagsUsed == 0){
-            cout<<P.info<<endl;
+        if(P->info != x){
+            simList[i].name = P->info;
+            simList[i].count = 0;
+            childAddress Pc = P->child.first;
+            while (Pc != NULL){
+                if(findTagsInDoc(Pd,Pc->info->info) != NULL){
+                    simList[i].count +=1;
+                }
+            }
+        }
+        P =P->next;
+        i+=1;
+    }
+    int max = simList[0].count
+    for (int j = 1; j <=i; ++j) {
+        if(max < simList[j].count){
+            max = simList[j].count;
         }
     }
-}
+    cout << "Most Simmilar Document(has "<<max<<" same tag(s)"<<endl;
+    for (int j = 0; j <=i; ++j) {
+        if(max == simList[j].count){
+            cout << simList[j].name <<endl;
+        }
+    }
+};

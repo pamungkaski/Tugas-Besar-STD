@@ -39,4 +39,7 @@ childAddress findTagsInDoc(docAddress doc, infotype x);
 void docPop(docList &dL, tagsList &tL);
 void deleteDoc(docList &dL,tagsList &tL, infotype x);
 void deleteCertTags(docList &dL,tagsList &tL, infotype x);
+void showDocWithSmallnLargeTag(docList &dL);
+void noTagDoc(docList &dL);
+void findMostSimillarPaper(docList &dL, infotype x);
 #endif //TUGASBESARSTD_DOCUMENT_H
