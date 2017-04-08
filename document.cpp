@@ -50,8 +50,10 @@ void createRelation(docList &Ld,tagsList &Lt, infotype x, infotype y){
 };
 void showdoc(docList &L){
 	docAddress P=L.first;
+    int i = 1;
 	while (P!= NULL){
-		cout<<"Document="<<P->info<<endl;
+        cout<<"#"<<i<<endl;
+		cout<<"Document: "<<P->info<<endl;
 		childAddress Pt = P->child.first;
         cout<<"Tags:"<<endl;
         while (Pt != NULL){
@@ -59,6 +61,7 @@ void showdoc(docList &L){
 			Pt = Pt->next;
 		};
 		P = P->next;
+        i+=1;
 	};
 };
 tagsAddress popTag(tagsList &L){
