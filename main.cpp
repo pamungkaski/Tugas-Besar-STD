@@ -23,7 +23,7 @@ void menu(bool &stats){
     cout << "9.  Given two tags, find documents having both tags or one of them"<<endl;
     cout << "10. Lists all papers that do not have any tag"<<endl;
     cout << "11. Given a paper, find the most similar paper"<<endl;
-    cout << "12. Quit"<<endl;
+    cout << "12. Quit"<<endl;//udah
     cout << "Pilih menu : ";
     cin >> pil;
     switch(pil) {
