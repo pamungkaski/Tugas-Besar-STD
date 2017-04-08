@@ -67,7 +67,6 @@ void menu(bool &stats){
         case 8:
             break;
         case 9:
-
             break;
         case 10:
             break;
@@ -80,6 +79,7 @@ void menu(bool &stats){
             stats = false;
             break;
         default:
+            cout << "False Input"<<endl;
             break;
     }
 };

@@ -103,7 +103,12 @@ void deleteDoc(docList &dL,tagsList &tL, infotype x){
         dC= dC->next;
     }
     if(Pd == dL.first){
-        dL.first = Pd->next;
+        if(dL.first == dL.last){
+            dL.first = NULL;
+            dL.last = NULL;
+        }else {
+            dL.first = Pd->next;
+        }
     }else if(Pd == dL.last){
         docAddress dP = dL.first;
         while(dP->next != Pd){
@@ -121,14 +126,19 @@ void deleteDoc(docList &dL,tagsList &tL, infotype x){
     delete(Pd);
 };
 void deleteCertTags(docList &dL,tagsList &tL, infotype x){
-    tagsAddress Pt = findTags(tL,x);
     docAddress Pd = dL.first;
     childAddress Pc1,Pc2;
     while(Pd != NULL){
         Pc1 = Pd->child.first;
         if(Pc1->info->info == x){
-            Pd->child.first = Pc1->next;
-            delete(Pc1);
+            if(Pd->child.first == Pd->child.last){
+                Pd->child.first = NULL;
+                Pd->child.last = NULL;
+                delete Pc1;
+            } else {
+                Pd->child.first = Pc1->next;
+                delete Pc1;
+            }
         }else{
             while(Pc1->next->info->info != x){
                 Pc1 = Pc1->next;
@@ -138,8 +148,11 @@ void deleteCertTags(docList &dL,tagsList &tL, infotype x){
                 Pd->child.last = Pc1;
             }
             Pc1->next = Pc2->next;
+            delete Pc2;
         }
+        Pd = Pd->next;
     }
+    deleteTags(tL,x);
 };
 void showDocWithSmallnLargeTag(docList &dL){
     docAddress min = dL.first;

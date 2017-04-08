@@ -35,7 +35,7 @@ void newTags(tagsList &L, infotype x){
 void deleteTags(tagsList &L, infotype x){
     if(L.first!=NULL) {
         tagsAddress P1 = L.first;
-        if(P1->info==x){
+        if(P1->info == x){
             if(L.first==L.last){
                 L.first = NULL;
                 L.last = NULL;
