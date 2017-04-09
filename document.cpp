@@ -214,3 +214,13 @@ void findMostSimillarPaper(docList &dL, infotype x){
         }
     }
 };
+docAddress findbothtag(docList &dL,tagsList &tL){
+    docAddress P = dL.first;
+    newTags(tL1,x);
+    newTags(tL2,x);
+    while(P != NULL){
+        if((findTagsInDoc(P,newTags(tL1)->info) != NULL) or (findTagsInDoc(P,new(tL2)->info) != NULL)){
+            cout<<"Document Found"<<endl;
+        } 
+    }
+}
