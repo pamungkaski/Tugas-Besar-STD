@@ -63,10 +63,13 @@ void menu(bool &stats){
         	showdoc(listD);
             break;
         case 7:
+        	cout<<"The Most Popular Tag is:"<<endl;
+        	popTag(listT);
             break;
         case 8:
             break;
         case 9:
+        	
             break;
         case 10:
             break;
