@@ -33,7 +33,7 @@ void createlist (docList &L);
 void addDoc (docList &L, infotype x);
 docAddress findElm(docList &L, infotype x);
 void createRelation(docList &Ld,tagsList &Lt, infotype x, infotype y);
-void showdoc (docList &L);
+void showDoc (docList &L);
 tagsAddress popTag (tagsList &L);
 childAddress findTagsInDoc(docAddress doc, infotype x);
 void docPop(docList &dL, tagsList &tL);
@@ -42,5 +42,5 @@ void deleteCertTags(docList &dL,tagsList &tL, infotype x);
 void showDocWithSmallnLargeTag(docList &dL);
 void noTagDoc(docList &dL);
 void findMostSimillarPaper(docList &dL, infotype x);
-docAddress findbothtag(docList &dL,tagsList &tL);
+void findDocBasedOnTag(docList &dL,infotype x,infotype y);
 #endif //TUGASBESARSTD_DOCUMENT_H

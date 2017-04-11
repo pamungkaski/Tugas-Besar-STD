@@ -2,13 +2,9 @@
 #include "document.h"
 
 using namespace std;
-void menu(bool &stats){
-    int pil;
-    docList listD;
-    tagsList listT;
-    infotype x,y;
-    createList(listT);
-    createlist(listD);
+void menu(bool &stats, docList &listD, tagsList &listT){
+    int pil = 0;
+    string x,y;
     cout << "Menu :"<<endl;
     cout << "1.  Add a new document"<<endl;//udah
     cout << "2.  Add a new tag"<<endl;//udah
@@ -19,7 +15,7 @@ void menu(bool &stats){
     cout << "7.  Find the most popular tags"<<endl;//udah
     cout << "8.  List all documents tagged having the most popular tag"<<endl;//udah
     cout << "9.  Find a document with the largest and smallest number of tags"<<endl;//udah
-    cout << "10. Given two tags, find documents having both tags or one of them"<<endl;
+    cout << "10. Given two tags, find documents having both tags or one of them"<<endl;//udah
     cout << "11. Lists all papers that do not have any tag"<<endl;//udah
     cout << "12. Given a paper, find the most similar paper"<<endl;//udah
     cout << "13. Quit"<<endl;//udah
@@ -48,7 +44,7 @@ void menu(bool &stats){
             break;
         case 4:
             cout<<"Document title: ";
-            cin>> x;
+            cin >> x;
         	deleteDoc(listD,listT,x);
         	cout<<"Document Deleted"<<endl;
             break;
@@ -60,19 +56,36 @@ void menu(bool &stats){
             break;
         case 6:
             cout<<"Document List"<<endl;
-        	showdoc(listD);
+        	showDoc(listD);
             break;
         case 7:
+        	cout<<"The Most Popular Tag is: "<<popTag(listT)->info<<"("<<popTag(listT)->tagsUsed<<" Tag(s))"<<endl;
             break;
         case 8:
+            cout<<"Documents That Has Popular Tag(s)"<<endl;
+            cout<<"The Most Popular Tag is: "<<popTag(listT)->info<<"("<<popTag(listT)->tagsUsed<<" Tag(s))"<<endl;
+            docPop(listD,listT);
             break;
         case 9:
+            showDocWithSmallnLargeTag(listD);
             break;
         case 10:
+            cout << "First Tag: ";
+            cin >> x;
+            cout << "Second Tag: ";
+            cin >> y;
+            cout<<"Document List"<<endl;
+            findDocBasedOnTag(listD,x,y);
             break;
         case 11:
+            cout<<"Document List"<<endl;
+            noTagDoc(listD);
             break;
         case 12:
+            cout<<"Document title: ";
+            cin>> x;
+            cout<<"Document List"<<endl;
+            findMostSimillarPaper(listD,x);
             break;
         case 13:
             cout << "GoodBye!!"<<endl;
@@ -84,9 +97,13 @@ void menu(bool &stats){
     }
 };
 int main(){
+    docList listD;
+    tagsList listT;
+    createList(listT);
+    createlist(listD);
     bool stats = true;
     while(stats){
-        menu(stats);
+        menu(stats,listD,listT);
     }
     return 0;
 }

@@ -48,18 +48,20 @@ void createRelation(docList &Ld,tagsList &Lt, infotype x, infotype y){
         Pd->child.last = P;
     }
 };
-void showdoc(docList &L){
-	docAddress P=L.first;
+void showDoc(docList &L){
+	docAddress P = L.first;
     int i = 1;
 	while (P!= NULL){
         cout<<"#"<<i<<endl;
 		cout<<"Document: "<<P->info<<endl;
-		childAddress Pt = P->child.first;
+		childAddress Pt =  new childElm;
+        Pt = P->child.first;
         cout<<"Tags:"<<endl;
         while (Pt != NULL){
 			cout<<"#"<<Pt->info->info<<" ";
 			Pt = Pt->next;
 		};
+        cout << endl;
 		P = P->next;
         i+=1;
 	};
@@ -77,7 +79,8 @@ tagsAddress popTag(tagsList &L){
     return max;
 };
 childAddress findTagsInDoc(docAddress doc, infotype x){
-    childAddress P = doc->child.first;
+    childAddress P = new childElm;
+    P = doc->child.first;
     while ((P->info->info != x) and (P->next != NULL)){
         P = P->next;
     }if (P->info->info == x){
@@ -97,7 +100,8 @@ void docPop(docList &dL, tagsList &tL){
 }
 void deleteDoc(docList &dL,tagsList &tL, infotype x){
     docAddress Pd = findElm(dL,x);
-    childAddress dC = Pd->child.first;
+    childAddress dC = new childElm;
+    dC = Pd->child.first;
     while(dC != NULL){
         dC->info->tagsUsed-=1;
         dC= dC->next;
@@ -127,7 +131,7 @@ void deleteDoc(docList &dL,tagsList &tL, infotype x){
 };
 void deleteCertTags(docList &dL,tagsList &tL, infotype x){
     docAddress Pd = dL.first;
-    childAddress Pc1,Pc2;
+    childAddress Pc1,Pc2 = new childElm;
     while(Pd != NULL){
         Pc1 = Pd->child.first;
         if(Pc1->info->info == x){
@@ -183,7 +187,7 @@ void findMostSimillarPaper(docList &dL, infotype x){
     docAddress P = dL.first;
     struct simillarity{
         infotype name;
-        int count;
+        int count = 0;
     };
     simillarity simList[100];
     int i = 0;
@@ -191,7 +195,8 @@ void findMostSimillarPaper(docList &dL, infotype x){
         if(P->info != x){
             simList[i].name = P->info;
             simList[i].count = 0;
-            childAddress Pc = P->child.first;
+            childAddress Pc = new childElm;
+            Pc = P->child.first;
             while (Pc != NULL){
                 if(findTagsInDoc(Pd,Pc->info->info) != NULL){
                     simList[i].count +=1;
@@ -201,7 +206,7 @@ void findMostSimillarPaper(docList &dL, infotype x){
         P =P->next;
         i+=1;
     }
-    int max = simList[0].count
+    int max = simList[0].count;
     for (int j = 1; j <=i; ++j) {
         if(max < simList[j].count){
             max = simList[j].count;
@@ -214,13 +219,11 @@ void findMostSimillarPaper(docList &dL, infotype x){
         }
     }
 };
-docAddress findbothtag(docList &dL,tagsList &tL){
+void findDocBasedOnTag(docList &dL,infotype x,infotype y){
     docAddress P = dL.first;
-    newTags(tL1,x);
-    newTags(tL2,x);
-    while(P != NULL){
-        if((findTagsInDoc(P,newTags(tL1)->info) != NULL) or (findTagsInDoc(P,new(tL2)->info) != NULL)){
-            cout<<"Document Found"<<endl;
-        } 
+    while (P != NULL){
+        if((findTagsInDoc(P,x) != NULL) or (findTagsInDoc(P,y) != NULL)){
+            cout<<P->info<<endl;
+        }
     }
 }
