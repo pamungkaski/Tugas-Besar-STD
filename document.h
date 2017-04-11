@@ -42,4 +42,5 @@ void deleteCertTags(docList &dL,tagsList &tL, infotype x);
 void showDocWithSmallnLargeTag(docList &dL);
 void noTagDoc(docList &dL);
 void findMostSimillarPaper(docList &dL, infotype x);
+docAddress findbothtag(docList &dL,tagsList &tL);
 #endif //TUGASBESARSTD_DOCUMENT_H
