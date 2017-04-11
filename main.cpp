@@ -24,33 +24,34 @@ void menu(bool &stats, docList &listD, tagsList &listT){
     switch(pil) {
         case 1:
             cout<<"Document title: ";
-            cin>> x;
+            getline(cin,x);
+            cout<<x<<endl;
             addDoc(listD,x);
             cout<<"Document Added"<<endl;
             break;
         case 2:
             cout<<"Tag name: ";
-            cin>> x;
+            getline(cin,x);
             newTags(listT,x);
             cout<<"Tag Added"<<endl;
             break;
         case 3:
             cout<<"Document title: ";
-            cin>> x;
+            getline(cin,x);
             cout<<"Tag name: ";
-            cin>> y;
+            getline(cin,y);
             createRelation(listD,listT,x,y);
             cout<<"Relation Added"<<endl;
             break;
         case 4:
             cout<<"Document title: ";
-            cin >> x;
+            getline(cin,x);
         	deleteDoc(listD,listT,x);
         	cout<<"Document Deleted"<<endl;
             break;
         case 5:
             cout<<"Tag name: ";
-            cin>> x;
+            getline(cin,x);
             deleteCertTags(listD,listT,x);
             cout<<"Tag Deleted"<<endl;
             break;
@@ -71,9 +72,9 @@ void menu(bool &stats, docList &listD, tagsList &listT){
             break;
         case 10:
             cout << "First Tag: ";
-            cin >> x;
+            getline(cin,x);
             cout << "Second Tag: ";
-            cin >> y;
+            getline(cin,y);
             cout<<"Document List"<<endl;
             findDocBasedOnTag(listD,x,y);
             break;
@@ -83,7 +84,7 @@ void menu(bool &stats, docList &listD, tagsList &listT){
             break;
         case 12:
             cout<<"Document title: ";
-            cin>> x;
+            getline(cin,x);
             cout<<"Document List"<<endl;
             findMostSimillarPaper(listD,x);
             break;
@@ -100,7 +101,7 @@ int main(){
     docList listD;
     tagsList listT;
     createList(listT);
-    createlist(listD);
+    createList(listD);
     bool stats = true;
     while(stats){
         menu(stats,listD,listT);

@@ -29,7 +29,7 @@ struct docElm{
     childList child;
     docAddress next;
 };
-void createlist (docList &L);
+void createList (docList &L);
 void addDoc (docList &L, infotype x);
 docAddress findElm(docList &L, infotype x);
 void createRelation(docList &Ld,tagsList &Lt, infotype x, infotype y);
