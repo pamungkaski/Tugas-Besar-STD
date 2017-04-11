@@ -36,25 +36,26 @@ docAddress findElm(docList &L, infotype x){
 void createRelation(docList &Ld,tagsList &Lt, infotype x, infotype y){
     docAddress Pd = findElm(Ld,x);
     tagsAddress Pt = findTags(Lt,y);
-    Pd->tagsCount+=1;
-    Pt->tagsUsed+=1;
-    childAddress P = new childElm;
-    P->info = Pt;
-    if(Pd->child.first == NULL){
-        Pd->child.first = P;
-        Pd->child.last = P;
-    }else{
-        Pd->child.last->next =P;
-        Pd->child.last = P;
+    if((Pd != NULL)and(Pt != NULL )) {
+        Pd->tagsCount += 1;
+        Pt->tagsUsed += 1;
+        childAddress P = new childElm;
+        P->info = Pt;
+        if (Pd->child.first == NULL) {
+            Pd->child.first = P;
+            Pd->child.last = P;
+        } else {
+            Pd->child.last->next = P;
+            Pd->child.last = P;
+        }
     }
 };
 void showDoc(docList &L){
 	docAddress P = L.first;
     int i = 1;
+    childAddress Pt;
 	while (P!= NULL){
-        cout<<"#"<<i<<endl;
 		cout<<"Document: "<<P->info<<endl;
-		childAddress Pt =  new childElm;
         Pt = P->child.first;
         cout<<"Tags:"<<endl;
         while (Pt != NULL){
@@ -79,7 +80,7 @@ tagsAddress popTag(tagsList &L){
     return max;
 };
 childAddress findTagsInDoc(docAddress doc, infotype x){
-    childAddress P = new childElm;
+    childAddress P;
     P = doc->child.first;
     while ((P->info->info != x) and (P->next != NULL)){
         P = P->next;
@@ -100,7 +101,8 @@ void docPop(docList &dL, tagsList &tL){
 }
 void deleteDoc(docList &dL,tagsList &tL, infotype x){
     docAddress Pd = findElm(dL,x);
-    childAddress dC = new childElm;
+    childAddress dC ;
+    docAddress dP = dL.first;
     dC = Pd->child.first;
     while(dC != NULL){
         dC->info->tagsUsed-=1;
@@ -114,7 +116,6 @@ void deleteDoc(docList &dL,tagsList &tL, infotype x){
             dL.first = Pd->next;
         }
     }else if(Pd == dL.last){
-        docAddress dP = dL.first;
         while(dP->next != Pd){
             dP = dP->next;
         }
@@ -131,7 +132,7 @@ void deleteDoc(docList &dL,tagsList &tL, infotype x){
 };
 void deleteCertTags(docList &dL,tagsList &tL, infotype x){
     docAddress Pd = dL.first;
-    childAddress Pc1,Pc2 = new childElm;
+    childAddress Pc1,Pc2 ;
     while(Pd != NULL){
         Pc1 = Pd->child.first;
         if(Pc1->info->info == x){
@@ -191,11 +192,11 @@ void findMostSimillarPaper(docList &dL, infotype x){
     };
     simillarity simList[100];
     int i = 0;
+    childAddress Pc;
     while(P != NULL){
         if(P->info != x){
             simList[i].name = P->info;
             simList[i].count = 0;
-            childAddress Pc = new childElm;
             Pc = P->child.first;
             while (Pc != NULL){
                 if(findTagsInDoc(Pd,Pc->info->info) != NULL){

@@ -21,11 +21,11 @@ void menu(bool &stats, docList &listD, tagsList &listT){
     cout << "13. Quit"<<endl;//udah
     cout << "Pilih menu : ";
     cin >> pil;
+    cin.ignore();
     switch(pil) {
         case 1:
             cout<<"Document title: ";
             getline(cin,x);
-            cout<<x<<endl;
             addDoc(listD,x);
             cout<<"Document Added"<<endl;
             break;
